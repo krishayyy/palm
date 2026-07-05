@@ -1,0 +1,8 @@
+.build/
+Palm.app/
+*.xcodeproj
+DerivedData/
+.swiftpm/
+.index-build/
+*.whisperkit/
+huggingface-cache/
