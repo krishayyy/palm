@@ -49,6 +49,12 @@ enum InputInjector {
         keyUp.post(tap: .cghidEventTap)
     }
 
+    static func postMouseEvent(type: CGEventType, at point: CGPoint) {
+        guard let source = CGEventSource(stateID: .hidSystemState) else { return }
+        guard let event = CGEvent(mouseEventSource: source, mouseType: type, mouseCursorPosition: point, mouseButton: .left) else { return }
+        event.post(tap: .cghidEventTap)
+    }
+
     private static func postUnicodeEvent(for string: String) {
         guard let source = CGEventSource(stateID: .hidSystemState) else { return }
         guard let keyDown = CGEvent(keyboardEventSource: source, virtualKey: 0, keyDown: true),

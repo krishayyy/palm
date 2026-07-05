@@ -6,3 +6,4 @@ DerivedData/
 .index-build/
 *.whisperkit/
 huggingface-cache/
+.claude-flow/
